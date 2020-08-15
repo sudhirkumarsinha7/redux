@@ -4,6 +4,17 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 platform :ios, '10.0'
 
 target 'reduxtemplate' do
+  pod 'React-RCTPushNotification', :path => '../node_modules/react-native/Libraries/PushNotificationIOS'
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+  pod 'GoogleMaps'
+  pod 'Google-Maps-iOS-Utils'
+  pod 'react-native-google-maps', path: '../node_modules/react-native-maps'  # Remove this line if you don't want to support Google Maps on iOS
+  pod 'react-native-camera', path: '../node_modules/react-native-camera', subspecs: [
+    'TextDetector',
+    'FaceDetectorMLKit',
+    'BarcodeDetectorMLKit'
+  ]
+  
   config = use_native_modules!
 
   use_react_native!(:path => config["reactNativePath"])
